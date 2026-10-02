@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="FoodShare">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FoodShare Connect – Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2f6b3a;--g2:#4a8b3f;--gl:#e6efe2;--cream:#fbf8f1;--ink:#1d2b20;--mut:#7a857c;--or:#f5e3c8;--pg:#fdf9f0;--pt:#1d2b20;--chip:#fff;--chipb:#d5dccf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pg:#17201a;--pt:#eef3ea;--chip:#222d25;--chipb:#3a4a3e}}
+:root[data-theme="dark"]{--pg:#17201a;--pt:#eef3ea;--chip:#222d25;--chipb:#3a4a3e}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--pg);color:var(--pt);font-family:'Noto Sans Thai','Sarabun',Tahoma,sans-serif;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+h1{font-size:15px;font-weight:700;margin:10px 0 6px;color:var(--pt)}
+.chips{display:flex;gap:6px;overflow-x:auto;max-width:100%;padding:2px 12px 8px}
+.chips button{flex:none;border:1px solid var(--chipb);background:var(--chip);color:var(--pt);font:inherit;font-size:12px;padding:5px 11px;border-radius:99px;cursor:pointer}
+.chips button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.chips button:focus-visible,.btn:focus-visible{outline:2px solid var(--g2);outline-offset:2px}
+.stage{flex:1;width:100%;display:flex;justify-content:center;align-items:flex-start;min-height:0}
+.phone{width:360px;height:740px;border:9px solid #111;border-radius:46px;background:var(--cream);position:relative;overflow:hidden;transform-origin:top center;flex:none;color:var(--ink)}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:130px;height:24px;background:#111;border-radius:0 0 16px 16px;z-index:9}
+.sb{position:absolute;top:6px;left:22px;font-size:11px;font-weight:700;z-index:8}
+.scr{position:absolute;inset:0;padding:38px 14px 0;display:none;flex-direction:column;font-size:12px}
+.scr.on{display:flex}
+.scr.nonav .body{padding-bottom:12px}
+.body{flex:1;overflow-y:auto;padding-bottom:70px;scrollbar-width:none}
+.body::-webkit-scrollbar{display:none}
+.top{display:flex;align-items:center;justify-content:space-between;height:34px;font-weight:700;font-size:14px;color:var(--g)}
+.top span{cursor:pointer;font-size:18px}
+.steps{display:flex;justify-content:center;gap:14px;margin:2px 0 8px}
+.steps i{width:18px;height:18px;border-radius:50%;background:var(--gl);color:#8aa88b;font:700 9px/18px inherit;text-align:center;font-style:normal}
+.steps i.on{background:var(--g);color:#fff}
+.card{background:#fff;border:1px solid #e8ece3;border-radius:14px;padding:11px;margin-bottom:9px}
+.hero{background:var(--g);color:#fff;border-radius:16px;padding:14px;margin-bottom:10px}
+.hero small{opacity:.85}
+.hero h2{font-size:19px;margin:2px 0}
+.stats{display:flex;border-top:1px solid #ffffff33;margin-top:10px;padding-top:9px}
+.stats div{flex:1}.stats b{font-size:18px}
+.row{display:flex;align-items:center;gap:10px;cursor:pointer}
+.row .grow{flex:1}
+.ic{width:38px;height:38px;border-radius:50%;background:var(--gl);display:grid;place-items:center;font-size:18px;flex:none}
+.thumb{width:44px;height:44px;border-radius:50%;background:var(--or);display:grid;place-items:center;font-size:24px;flex:none}
+.tag{font-size:10px;padding:2px 9px;border-radius:99px;background:var(--or);color:#b8741a;font-weight:700}
+.tag.ok{background:var(--gl);color:var(--g)}
+.tag.no{background:#fde7e2;color:#c0492f}
+.sec{display:flex;justify-content:space-between;font-weight:700;margin:6px 0}
+.sec a{font-weight:400;color:var(--mut);font-size:11px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:12px;background:var(--g);color:#fff;font:700 14px inherit;font-family:inherit;padding:13px;cursor:pointer;margin-top:8px}
+.btn.o{background:#fff;color:var(--g);border:1.5px solid var(--g2)}
+.btn.sm{width:auto;padding:6px 12px;font-size:11px;margin:0}
+.fld{display:flex;gap:10px;align-items:center;background:#fff;border:1px solid #e3e8de;border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.fld b{display:block;font-size:12px}.fld span{color:var(--mut);font-size:11px}
+.cam{width:104px;height:104px;margin:4px auto 12px;border:1.5px dashed #9bb89c;border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--g);font-weight:700;font-size:11px}
+.cam i{font-size:30px;font-style:normal}
+.nav{position:absolute;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid #e8ece3;display:flex;padding:6px 4px;z-index:5}
+.nav button{flex:1;border:0;background:none;font:inherit;font-size:10px;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer}
+.nav button i{font-style:normal;font-size:19px}
+.nav button.on{color:var(--g);font-weight:700}
+.map{border-radius:12px;overflow:hidden;margin-bottom:9px;background:#eef1ea;height:170px}
+.map svg{width:100%;height:100%;display:block}
+.tl{list-style:none;padding:0}
+.tl li{display:flex;gap:10px;padding:5px 0;position:relative;align-items:center}
+.tl li span.d{width:18px;height:18px;border-radius:50%;background:var(--g);color:#fff;font-size:10px;text-align:center;line-height:18px;flex:none;z-index:1}
+.tl li.w span.d{background:#cfd5cb}
+.tl li:not(:last-child)::after{content:"";position:absolute;left:8px;top:22px;bottom:-6px;width:2px;background:#b9d0b8}
+.tl li em{margin-left:auto;font-style:normal;color:var(--mut);font-size:10px}
+.person{display:flex;gap:10px;align-items:center}
+.av{width:44px;height:44px;border-radius:50%;background:#dfeadb;display:grid;place-items:center;font-size:24px}
+.big{text-align:center;padding:14px 0 6px}
+.big .em{font-size:64px;line-height:1.1}.big h3{color:var(--g);font-size:17px;margin:6px 0 2px}.big p{color:var(--mut)}
+.qty{display:flex;align-items:center;gap:6px;margin-left:auto}
+.qty b{border:1px solid #dfe5da;border-radius:8px;padding:2px 16px}
+.stars{text-align:center;color:var(--g);font-size:26px;letter-spacing:4px}
+.toast{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);background:#111;color:#fff;font-size:11px;padding:7px 14px;border-radius:99px;opacity:0;transition:opacity .25s;z-index:20;pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+body{touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.chips .nv{background:var(--g);color:#fff;border-color:var(--g)}
+@media (orientation:landscape) and (min-width:700px){
+body{flex-direction:row;align-items:stretch}
+h1{display:none}
+.chips{flex-direction:column;overflow-y:auto;width:220px;max-width:220px;padding:16px 12px;gap:8px;flex:none}
+.chips button{font-size:15px;padding:11px 14px;text-align:left;border-radius:12px}
+.stage{align-items:center}
+}
+.mi{display:flex;align-items:center;gap:11px;padding:11px 12px;cursor:pointer;border-bottom:1px solid #eef1ea}
+.mi:last-child{border-bottom:0}
+.mi .grow{flex:1}.mi small{color:var(--mut)}.mi .ch{color:#aab5ab;font-size:16px}
+.menu{background:#fff;border:1px solid #e8ece3;border-radius:14px;margin-bottom:10px;overflow:hidden}
+.sw{width:40px;height:23px;border-radius:99px;background:#cfd5cb;position:relative;flex:none;cursor:pointer;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:left .2s}
+.sw.on{background:var(--g)}.sw.on::after{left:20px}
+.badge{display:flex;gap:6px;margin-top:10px}
+.badge span{flex:1;background:#ffffff1f;border-radius:10px;padding:6px 4px;text-align:center;font-size:10px}
+.sh{font-weight:700;font-size:11px;color:var(--mut);margin:4px 2px 5px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:2px 0 10px;scrollbar-width:none}
+.tab{flex:none;border:1px solid #dfe5da;background:#fff;color:#4b5a4e;font:inherit;font-size:11px;padding:6px 12px;border-radius:99px;cursor:pointer}
+.tab.on{background:var(--g);color:#fff;border-color:var(--g)}
+.srch{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #e3e8de;border-radius:12px;padding:9px 12px;color:var(--mut);margin-bottom:9px}
+.sum{display:flex;gap:8px;margin-bottom:10px}
+.sum div{flex:1;background:var(--gl);border-radius:12px;padding:8px;text-align:center;color:var(--g)}
+.sum b{font-size:17px;display:block}
+.it .tag.sh2{background:#e3ecf7;color:#2c5d9a}
+h1,.chips{display:none!important}
+.stage{align-items:center}
+</style>
+</head>
+<body>
+<h1>FoodShare Connect · Mockup</h1>
+<div class="chips" id="chips"></div>
+<div class="stage"><div class="phone" id="phone">
+<div class="notch"></div><div class="sb">9:41</div>
+
+<!-- 1 login -->
+<section class="scr nonav" id="login"><div class="body" style="text-align:center;padding-top:70px">
+<svg width="150" height="130" viewBox="0 0 150 130"><path d="M75 118C20 80 8 50 20 28c14-22 45-14 55 6 10-20 41-28 55-6 12 22 0 52-55 90z" fill="none" stroke="#4a8b3f" stroke-width="7" stroke-linejoin="round"/><path d="M38 66h74c0 24-16 38-37 38S38 90 38 66z" fill="#2f6b3a"/><circle cx="62" cy="58" r="11" fill="#e0662b"/><circle cx="80" cy="56" r="10" fill="#f0a03a"/><path d="M90 56c0-18 12-26 22-28 0 14-8 26-22 28z" fill="#4a8b3f"/></svg>
+<div style="font-size:31px;font-weight:700;color:var(--g);line-height:1.1;margin-top:6px">FoodShare</div>
+<div style="letter-spacing:6px;font-size:11px;color:var(--g);margin:2px 0 8px">CONNECT</div>
+<div style="color:#4b5a4e;font-size:13px">ส่งต่ออาหาร ส่วนต่อความห่วงใย</div>
+<div style="margin-top:70px"><button class="btn" data-go="shop">🏪 เข้าสู่ระบบ (ร้านอาหาร)</button>
+<button class="btn o" data-go="home">👤 เข้าสู่ระบบ (มูลนิธิ/อาสาสมัคร)</button>
+<p style="margin-top:16px;color:var(--mut)">ยังไม่มีบัญชี? <b style="color:var(--g)">สมัครสมาชิก</b></p></div></div></section>
+
+<!-- 2 shop -->
+<section class="scr nonav" id="shop"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>ข้อมูลร้านอาหาร<span></span></div>
+<div class="body"><div class="cam"><div><i>📷</i><br>เพิ่มรูปภาพร้าน<br><small style="font-weight:400;color:var(--mut)">(แนะนำ)</small></div></div>
+<div class="fld"><div class="ic" style="width:28px;height:28px;font-size:14px">🏪</div><div><b>ชื่อร้านอาหาร</b><span>ครัวคุณแม่</span></div></div>
+<div class="fld"><div class="ic" style="width:28px;height:28px;font-size:14px">🍴</div><div><b>ประเภทร้านอาหาร</b><span>อาหารตามสั่ง</span></div></div>
+<div class="fld"><div class="ic" style="width:28px;height:28px;font-size:14px">📍</div><div><b>ที่อยู่ร้านอาหาร</b><span>123 ถนนพหลโยธิน กรุงเทพฯ</span></div></div>
+<div class="fld"><div class="ic" style="width:28px;height:28px;font-size:14px">📞</div><div><b>เบอร์โทรศัพท์</b><span>02-123-4567</span></div></div>
+<div class="fld"><div class="ic" style="width:28px;height:28px;font-size:14px">⏰</div><div><b>จำนวนอาหารโดยประมาณ / วัน</b><span>เช่น 20-30 กล่อง / วัน</span></div></div>
+<button class="btn" data-go="home">ถัดไป →</button></div></section>
+
+<!-- 3 home -->
+<section class="scr" id="home"><div class="top"><span>☰</span><b style="font-size:17px">FoodShare</b><span>🔔</span></div>
+<div class="body"><div class="hero"><small>สวัสดีครับ</small><h2>ครัวคุณแม่ <span class="tag" style="background:#ffffff30;color:#fff;vertical-align:middle">ร้านอาหาร</span></h2>
+<small>ขอบคุณที่ร่วมแบ่งปันอาหาร<br>เพื่อสังคมที่น่าอยู่ 💚</small>
+<div class="stats"><div><small>บริจาคแล้วทั้งหมด</small><br><b>24</b> ครั้ง</div><div><small>ช่วยเหลือผู้คนแล้ว</small><br><b>1,248</b> คน</div></div></div>
+<div class="card row" data-go="map"><div class="ic">🚚</div><div class="grow"><b>อาหารที่รอการรับ</b><br><small style="color:var(--mut)">คุณมีอาหารพร้อมให้รับวันนี้</small></div><b style="color:var(--g)">2 รายการ ›</b></div>
+<div class="sec">รายการล่าสุด <a data-go="list" style="cursor:pointer">ดูทั้งหมด ›</a></div>
+<div class="card row" data-go="detail"><div class="thumb">🍛</div><div class="grow"><b>ข้าวกะเพราหมู</b><br>2 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 18:30</small></div><span class="tag">รอการรับ</span></div>
+<div class="card row" data-go="done"><div class="thumb" style="background:var(--gl)">🍲</div><div class="grow"><b>แกงจืดเต้าหู้หมูสับ</b><br>3 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 17:45</small></div><span class="tag ok">รับเรียบร้อย</span></div>
+<div class="card row" style="background:var(--gl)"><div class="ic" style="background:#fff">🌿</div><div class="grow"><b>มาร่วมลดขยะอาหารไปด้วยกัน</b><br><small style="color:var(--mut)">อาหารของคุณ สามารถเปลี่ยนเป็นรอยยิ้มให้ใครอีกคนได้</small></div></div>
+<button class="btn" data-go="report" style="justify-content:flex-start;text-align:left"><span style="background:#fff;color:var(--g);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:20px">+</span><span>แจ้งอาหารเหลือ<br><small style="font-weight:400">มีอาหารเหลือใช่ไหม? แจ้งให้เรามารับไปแบ่งปัน</small></span></button></div></section>
+
+<!-- 4 report -->
+<section class="scr" id="report"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>แจ้งอาหารเหลือ<span style="font-size:11px">🕘 ประวัติ</span></div>
+<div class="body"><div class="card"><b>1. ประเภทอาหาร</b><div class="fld" style="margin:6px 0 10px"><span>อาหารปรุงสำเร็จ ▾</span></div>
+<b>2. ชื่ออาหาร</b><div class="fld" style="margin:6px 0 10px"><span>ข้าวกะเพราหมู</span></div>
+<b>3. จำนวน (กล่อง/ชุด)</b><div class="row" style="margin:6px 0 10px"><div class="qty"><b>−</b><b>2</b><b>+</b></div></div>
+<b>4. รายละเอียดเพิ่มเติม</b><div class="fld" style="margin:6px 0 10px"><span>เช่น ไม่ใส่ผัก / เผ็ดน้อย</span></div>
+<b>5. เวลาที่พร้อมให้รับ</b><div class="fld" style="margin:6px 0 10px"><span>22 พ.ค. 67 · 18:30</span></div>
+<b>6. รูปภาพอาหาร</b><div class="fld" style="margin:6px 0 10px;justify-content:center;border-style:dashed"><span>📷 เพิ่มรูปภาพอาหาร (สูงสุด 3 รูป)</span></div>
+<div class="fld" style="background:var(--gl);border:0"><span style="color:var(--g)">🛡️ อาหารที่ส่งต่อ ต้องปลอดภัยและยังรับประทานได้</span></div>
+<button class="btn" data-go="home" data-toast="แจ้งอาหารเหลือเรียบร้อยแล้ว ✓" style="margin-top:0">ยืนยันการแจ้ง</button></div></div></section>
+
+<!-- 5 map item -->
+<section class="scr" id="mapitem"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>แผนที่ / รอการรับ<span>🔔</span></div>
+<div class="body"><div class="card row"><div class="ic" style="background:var(--g);color:#fff">🚚</div><div class="grow"><b>กำลังรออาสาสมัครรับอาหาร</b><br><small style="color:var(--mut)">อาสาสมัครกำลังเดินทางมารับ</small></div><span class="tag">รอการรับ</span></div>
+<div class="map"><svg viewBox="0 0 320 170"><g stroke="#fff" stroke-width="9"><path d="M0 50H320M0 120H320M70 0V170M200 0V170"/></g><g stroke="#fff" stroke-width="4"><path d="M0 85H320M135 0V170M270 0V170"/></g><rect x="215" y="62" width="40" height="42" fill="#dce9d3"/><path d="M200 30V85H135V135" fill="none" stroke="#2f6b3a" stroke-width="4"/><circle cx="200" cy="30" r="9" fill="#2f6b3a"/><text x="196" y="34" font-size="10" fill="#fff">🛵</text><rect x="212" y="12" width="94" height="26" rx="6" fill="#fff"/><text x="218" y="23" font-size="8" font-weight="700">อาสาสมัครกำลังเดินทาง</text><text x="218" y="33" font-size="7" fill="#7a857c">อีกประมาณ 12 นาที</text><circle cx="135" cy="135" r="12" fill="#2f6b3a"/><text x="129" y="140" font-size="12">🏪</text></svg></div>
+<div class="card"><div class="row"><div class="thumb">🍛</div><div class="grow"><b>ข้าวกะเพราหมู 2 กล่อง</b><br><small style="color:var(--mut)">22 พ.ค. 67 · 18:30</small></div><button class="btn o sm" data-go="detail">ดูรายละเอียด</button></div>
+<ul class="tl" style="margin-top:8px"><li><span class="d">✓</span>แจ้งอาหารเหลือแล้ว<em>18:05</em></li><li><span class="d">✓</span>กำลังหาคนอาสาสมัคร<em>18:06</em></li><li><span class="d">🛵</span><b>อาสาสมัครกำลังเดินทางมารับ</b><em>18:10</em></li><li class="w"><span class="d"></span>รอการรับอาหาร</li></ul></div></div></section>
+
+<!-- map overview -->
+<section class="scr" id="map"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>แผนที่<span>🔔</span></div>
+<div class="body"><div class="map" style="height:240px;position:relative"><svg viewBox="0 0 320 240"><g stroke="#fff" stroke-width="10"><path d="M0 70H320M0 170H320M90 0V240M230 0V240"/></g><g stroke="#fff" stroke-width="4"><path d="M0 120H320M160 0V240M290 0V240"/></g><rect x="100" y="76" width="50" height="38" fill="#dce9d3"/><rect x="240" y="176" width="44" height="40" fill="#dce9d3"/>
+<path d="M230 40V120H160V190" fill="none" stroke="#2f6b3a" stroke-width="4" stroke-dasharray="1 7" stroke-linecap="round"/><path d="M60 215H160V190" fill="none" stroke="#2f6b3a" stroke-width="4" stroke-dasharray="1 7" stroke-linecap="round"/>
+<g data-go="mapitem" style="cursor:pointer"><circle cx="230" cy="40" r="15" fill="#2f6b3a"/><text x="221" y="46" font-size="16">🛵</text><rect x="196" y="9" width="68" height="16" rx="8" fill="#fff"/><text x="204" y="20" font-size="8" font-weight="700" fill="#b8741a">รอการรับ</text></g>
+<g data-go="track" style="cursor:pointer"><circle cx="60" cy="215" r="15" fill="#2f6b3a"/><text x="51" y="221" font-size="16">🛵</text><rect x="26" y="184" width="68" height="16" rx="8" fill="#fff"/><text x="31" y="195" font-size="8" font-weight="700" fill="#2c5d9a">กำลังจัดส่ง</text></g>
+<circle cx="160" cy="190" r="17" fill="#2f6b3a" stroke="#fff" stroke-width="3"/><text x="150" y="197" font-size="18">🏪</text></svg></div>
+<div class="sec">กำลังดำเนินการ <a>2 รายการ</a></div>
+<div class="card row it" data-go="mapitem"><div class="thumb">🍛</div><div class="grow"><b>ข้าวกะเพราหมู</b> · 2 กล่อง<br><small style="color:var(--mut)">อาสาสมัครถึงในอีก 12 นาที</small></div><span class="tag">รอการรับ</span></div>
+<div class="card row it" data-go="track"><div class="thumb" style="background:#e3ecf7">🍜</div><div class="grow"><b>ผัดซีอิ๊วหมู</b> · 3 กล่อง<br><small style="color:var(--mut)">ถึงผู้รับประมาณ 10:45 น.</small></div><span class="tag sh2">กำลังจัดส่ง</span></div>
+<p style="text-align:center;color:var(--mut);font-size:11px;margin-top:4px">กดรายการเพื่อดูแผนที่ของรายการนั้น</p></div></section>
+
+<!-- 6 detail -->
+<section class="scr" id="detail"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>รายละเอียดงาน<span>🔔</span></div>
+<div class="body"><div class="hero" style="padding:11px"><div class="person"><div class="av">🧑‍🍳</div><div style="flex:1"><small>อาสาสมัครรับงาน</small><br><b>คุณนนท์ อาสาดี</b><br><small>★ 4.9 (120 รีวิว)</small></div><div class="ic" style="background:#fff">📞</div><div class="ic" style="background:#fff">💬</div></div>
+<div style="border-top:1px solid #ffffff33;margin-top:8px;padding-top:6px;display:flex;justify-content:space-between"><span class="tag ok">✓ ยืนยันรับงานแล้ว</span><small>กำลังเดินทางมารับอาหาร</small></div></div>
+<div class="card"><b>ข้อมูลอาหารที่ต้องรับ</b><div class="row" style="margin-top:8px"><div class="thumb" style="width:56px;height:56px;border-radius:10px">🍛</div><div class="grow"><b>ข้าวกะเพราหมู</b><br>2 กล่อง<br><small style="color:var(--mut)">ประมาณ 6 ที่</small></div><div style="background:var(--gl);border-radius:10px;padding:6px 10px;text-align:center"><small>รับภายใน</small><br><b style="color:var(--g);font-size:15px">18:30 น.</b></div></div></div>
+<div class="card"><b>🏪 จุดรับอาหาร</b><div class="row" style="margin-top:6px"><div class="grow"><b>ครัวคุณแม่</b><br><small style="color:var(--mut)">123 ถนนพหลโยธิน แขวงลาดยาว กรุงเทพฯ 10900</small><br><small style="color:var(--g)">02-123-4567</small></div><div class="map" style="width:100px;height:70px;margin:0"><svg viewBox="0 0 100 70"><path d="M0 30H100M40 0V70" stroke="#fff" stroke-width="6"/><circle cx="55" cy="32" r="8" fill="#2f6b3a"/></svg></div></div>
+<div style="display:flex;gap:8px"><button class="btn o sm" style="flex:1;padding:9px">➤ นำทาง</button><button class="btn sm" style="flex:1;padding:9px">แชร์ตำแหน่ง</button></div></div>
+<div class="card"><b>📝 หมายเหตุจากร้าน</b><p style="margin-top:4px">ใส่กล่องเรียบร้อยแล้วค่ะ รบกวนมารับก่อนเวลาที่กำหนด ขอบคุณค่ะ 🙏</p></div>
+<button class="btn" data-go="track" style="margin-top:0">✓ ถึงร้านแล้ว</button></div></section>
+
+<!-- 7 track -->
+<section class="scr nonav" id="track"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>ติดตามการจัดส่ง<span></span></div>
+<div class="body"><div class="map" style="height:150px"><svg viewBox="0 0 320 150"><g stroke="#fff" stroke-width="7"><path d="M0 40H320M0 100H320M80 0V150M220 0V150"/></g><path d="M40 125L150 105L230 60L190 25" fill="none" stroke="#2f6b3a" stroke-width="4"/><circle cx="40" cy="125" r="9" fill="#2f6b3a"/><text x="35" y="129" font-size="11">🛵</text><circle cx="190" cy="25" r="6" fill="#2f6b3a"/></svg></div>
+<div class="card"><b style="font-size:15px">กำลังจัดส่ง</b><br>ไรเดอร์: <span style="color:var(--g)">สมชาย</span> · โทร: <span style="color:var(--g)">081-234-5678</span><br>ถึงโดยประมาณ <b style="color:var(--g);font-size:17px">10:45 – 11:00 น.</b></div>
+<div class="card"><ul class="tl"><li><span class="d">✓</span>ได้รับคำสั่งซื้อแล้ว<em>09:15 น.</em></li><li><span class="d">✓</span>กำลังเตรียมสินค้า<em>09:25 น.</em></li><li><span class="d">✓</span>ไรเดอร์กำลังเดินทางไปรับ<em>09:40 น.</em></li><li><span class="d">🛵</span><b>กำลังจัดส่ง</b><em>10:20 น.</em></li><li class="w"><span class="d"></span>จัดส่งสำเร็จ</li></ul></div>
+<button class="btn" data-go="done">ติดต่อไรเดอร์</button></div></section>
+
+<!-- 8 done -->
+<section class="scr nonav" id="done"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>ยืนยันการส่งมอบ<span></span></div>
+<div class="body"><div class="big"><div class="em">🤝</div><h3>ส่งมอบอาหารเรียบร้อยแล้ว</h3><p>ขอบคุณที่ร่วมแบ่งปันน้ำใจให้กับเพื่อนมนุษย์</p></div>
+<div class="card"><b>ข้อมูลการส่งมอบ</b>
+<div class="row" style="justify-content:space-between;margin-top:6px"><span>ผู้รับอาหาร</span><b>คุณสมชาย ใจดี</b></div>
+<div class="row" style="justify-content:space-between;margin-top:5px"><span>รายการอาหาร</span><b>ข้าวผัดหมู + ไข่ดาว · 2 กล่อง</b></div>
+<div class="row" style="justify-content:space-between;margin-top:5px"><span>เวลาส่งมอบ</span><b>22 ก.ค. 67 · 10:40 น.</b></div></div>
+<div class="card"><b>ให้คะแนนการส่งมอบ</b><div class="stars" style="margin-top:6px">★★★★★</div></div>
+<button class="btn" data-go="history">ดูประวัติการส่งมอบ</button></div></section>
+
+<!-- 9 history -->
+<section class="scr" id="history"><div class="top"><span>☰</span><b style="font-size:17px">FoodShare</b><span>🔔</span></div>
+<div class="body"><div class="hero row" style="cursor:default"><div class="grow"><h2>ประวัติการส่งมอบ</h2><small>ติดตามการส่งมอบอาหารและประวัติการแบ่งปันของคุณ 💚</small></div><span style="font-size:44px">📋</span></div>
+<div class="card row"><span>📅</span><span class="grow">เลือกช่วงเวลา</span><span>ทั้งหมด ▾</span></div>
+<div class="card row"><div class="thumb" style="background:var(--gl)">🍳</div><div class="grow"><b>ข้าวผัดผักรวม</b><br>2 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 18:30</small></div><span style="color:var(--g)">สำเร็จ ›</span></div>
+<div class="card row"><div class="thumb" style="background:var(--gl)">🍲</div><div class="grow"><b>แกงจืดเต้าหู้หมูสับ</b><br>1 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 17:45</small></div><span style="color:var(--g)">สำเร็จ ›</span></div>
+<div class="card row"><div class="thumb">🍝</div><div class="grow"><b>สปาเก็ตตี้ซอสมะเขือเทศ</b><br>3 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 16:20</small></div><span style="color:var(--g)">สำเร็จ ›</span></div>
+<div class="card row"><div class="thumb" style="background:var(--gl)">🥣</div><div class="grow"><b>แกงเขียวหวานไก่</b><br>2 กล่อง<br><small style="color:var(--mut)">21 พ.ค. 67 19:10</small></div><span style="color:#c0492f">ยกเลิก ›</span></div></div></section>
+
+<!-- list -->
+<section class="scr" id="list"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>รายการอาหาร<span data-go="report" aria-label="แจ้งอาหารเหลือ">＋</span></div>
+<div class="body"><div class="srch">🔍 ค้นหาชื่ออาหาร</div>
+<div class="sum"><div><b>5</b>ทั้งหมด</div><div><b>1</b>รอการรับ</div><div><b>1</b>กำลังจัดส่ง</div><div><b>2</b>สำเร็จ</div></div>
+<div class="tabs"><button class="tab on" data-f="all">ทั้งหมด</button><button class="tab" data-f="wait">รอการรับ</button><button class="tab" data-f="ship">กำลังจัดส่ง</button><button class="tab" data-f="ok">สำเร็จ</button></div>
+<div id="items">
+<div class="card row it" data-st="wait" data-go="mapitem"><div class="thumb" style="background:var(--or)">🍛</div><div class="grow"><b>ข้าวกะเพราหมู</b><br>2 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 18:30</small></div><span class="tag ">รอการรับ</span></div>
+<div class="card row it" data-st="ship" data-go="track"><div class="thumb" style="background:#e3ecf7">🍜</div><div class="grow"><b>ผัดซีอิ๊วหมู</b><br>3 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 18:10</small></div><span class="tag sh2">กำลังจัดส่ง</span></div>
+<div class="card row it" data-st="ok" data-go="done"><div class="thumb" style="background:var(--gl)">🍲</div><div class="grow"><b>แกงจืดเต้าหู้หมูสับ</b><br>3 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 17:45</small></div><span class="tag ok">รับเรียบร้อย</span></div>
+<div class="card row it" data-st="ok" data-go="done"><div class="thumb" style="background:var(--gl)">🍳</div><div class="grow"><b>ข้าวผัดผักรวม</b><br>2 กล่อง<br><small style="color:var(--mut)">22 พ.ค. 67 16:50</small></div><span class="tag ok">สำเร็จ</span></div>
+<div class="card row it" data-st="cancel" data-toast="รายการนี้ถูกยกเลิกแล้ว"><div class="thumb" style="background:var(--gl)">🥣</div><div class="grow"><b>แกงเขียวหวานไก่</b><br>2 กล่อง<br><small style="color:var(--mut)">21 พ.ค. 67 19:10</small></div><span class="tag no">ยกเลิก</span></div>
+</div>
+<div class="card" id="empty" style="display:none;text-align:center;color:var(--mut)">ยังไม่มีรายการในหมวดนี้</div>
+<button class="btn" data-go="report">＋ แจ้งอาหารเหลือ</button></div></section>
+
+<!-- 10 account -->
+<section class="scr" id="account"><div class="top"><span data-back role="button" aria-label="ย้อนกลับ">←</span>บัญชีผู้ใช้<span>🔔</span></div>
+<div class="body"><div class="hero"><div class="person"><div class="av" style="width:56px;height:56px;font-size:30px;background:#fff">🍳</div><div style="flex:1"><h2 style="margin:0">ครัวคุณแม่</h2><small>คุณแม่ใจดี · krua.mae@email.com</small><br><span class="tag ok" style="margin-top:4px;display:inline-block">✓ ร้านที่ยืนยันแล้ว</span></div></div>
+<div class="badge"><span><b style="font-size:15px">24</b><br>ครั้งที่บริจาค</span><span><b style="font-size:15px">1,248</b><br>คนที่ได้รับ</span><span><b style="font-size:15px">4.9 ★</b><br>คะแนนร้าน</span></div></div>
+<div class="sh">ข้อมูลของฉัน</div>
+<div class="menu"><div class="mi" data-go="shop"><div class="ic">🏪</div><div class="grow"><b>ข้อมูลร้านอาหาร</b><br><small>ชื่อ ประเภท รูปร้าน</small></div><span class="ch">›</span></div>
+<div class="mi" data-toast="แก้ไขที่อยู่ได้ในข้อมูลร้านอาหาร"><div class="ic">📍</div><div class="grow"><b>ที่อยู่และเบอร์โทร</b><br><small>123 ถนนพหลโยธิน · 02-123-4567</small></div><span class="ch">›</span></div>
+<div class="mi" data-go="history"><div class="ic">📋</div><div class="grow"><b>ประวัติการส่งมอบ</b><br><small>ดูรายการที่ผ่านมาทั้งหมด</small></div><span class="ch">›</span></div>
+<div class="mi" data-toast="กำลังพัฒนา"><div class="ic">🏅</div><div class="grow"><b>ใบประกาศเกียรติคุณ</b><br><small>ขอบคุณที่ร่วมแบ่งปัน</small></div><span class="ch">›</span></div></div>
+<div class="sh">การตั้งค่า</div>
+<div class="menu"><div class="mi"><div class="ic">🔔</div><div class="grow"><b>แจ้งเตือนสถานะอาหาร</b><br><small>เมื่อมีอาสาสมัครรับงาน</small></div><div class="sw on" role="switch" aria-label="แจ้งเตือน"></div></div>
+<div class="mi"><div class="ic">⏰</div><div class="grow"><b>เตือนเวลาแจ้งอาหารเหลือ</b><br><small>ทุกวัน 17:30 น.</small></div><div class="sw" role="switch" aria-label="เตือนเวลา"></div></div>
+<div class="mi" data-toast="ภาษา: ไทย"><div class="ic">🌐</div><div class="grow"><b>ภาษา</b></div><small>ไทย</small><span class="ch">›</span></div>
+<div class="mi" data-toast="ศูนย์ช่วยเหลือ 02-000-0000"><div class="ic">🎧</div><div class="grow"><b>ศูนย์ช่วยเหลือ</b></div><span class="ch">›</span></div></div>
+<button class="btn o" data-go="login" style="color:#c0492f;border-color:#e6b3a6;margin-top:0">ออกจากระบบ</button></div></section>
+
+<nav class="nav" id="nav"><button data-go="home"><i>⌂</i>หน้าหลัก</button><button data-go="list"><i>☰</i>รายการ</button><button data-go="map"><i>⌖</i>แผนที่</button><button data-go="history"><i>◷</i>ประวัติ</button><button data-go="account"><i>☺</i>บัญชีผู้ใช้</button></nav>
+<div class="toast" id="toast"></div>
+</div></div>
+
+<script>
+const S=[["login","เข้าสู่ระบบ"],["shop","ข้อมูลร้าน"],["home","หน้าหลัก"],["list","รายการ"],["report","แจ้งอาหารเหลือ"],["map","แผนที่"],["mapitem","แผนที่รายการ"],["detail","รายละเอียดงาน"],["track","ติดตามจัดส่ง"],["done","ส่งมอบสำเร็จ"],["history","ประวัติ"],["account","บัญชีผู้ใช้"]];
+const navOn={home:0,list:1,report:-1,map:2,mapitem:2,detail:2,history:3,account:4};
+const chips=document.getElementById('chips'),nav=document.getElementById('nav');
+S.forEach(([id,t],i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+t;b.dataset.go=id;chips.appendChild(b)});
+let cur=0;const hist=[];
+function jump(id){if(S[cur][0]!==id)hist.push(S[cur][0]);go(id)}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),2200)}
+function go(id){
+  cur=S.findIndex(x=>x[0]===id);
+  document.querySelectorAll('.scr').forEach(s=>s.classList.toggle('on',s.id===id));
+  const sc=document.getElementById(id);sc.querySelector('.body')&&(sc.querySelector('.body').scrollTop=0);
+  chips.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.go===id));
+  const hasNav=id in navOn;nav.style.display=hasNav?'flex':'none';
+  [...nav.children].forEach((b,i)=>b.classList.toggle('on',navOn[id]===i));
+}
+document.addEventListener('click',e=>{
+  if(e.target.closest('[data-back]')){go(hist.length?hist.pop():'login');return}
+  const tb=e.target.closest('.tab');if(tb){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===tb));let n=0;document.querySelectorAll('#items .it').forEach(c=>{const v=tb.dataset.f==='all'||c.dataset.st===tb.dataset.f;c.style.display=v?'':'none';if(v)n++});document.getElementById('empty').style.display=n?'none':'';return}
+  const sw=e.target.closest('.sw');if(sw){sw.classList.toggle('on');return}
+  const t=e.target.closest('[data-go],[data-toast]');if(!t)return;
+  if(t.dataset.go)jump(t.dataset.go);if(t.dataset.toast)toast(t.dataset.toast)});
+function fit(){const p=document.getElementById('phone'),st=document.querySelector('.stage'),h=st.clientHeight-16,w=st.clientWidth-16;const k=Math.min(h/740,w/360,1.8);p.style.transform='scale('+k+')';p.style.marginBottom=(740*(k-1))+'px'}
+
+const step=d=>jump(S[(cur+d+S.length)%S.length][0]);
+[['ถัดไป ▶',1],['◀ ก่อนหน้า',-1]].forEach(([t,d])=>{const b=document.createElement('button');b.className='nv';b.textContent=t;b.onclick=()=>step(d);chips.prepend(b)});
+addEventListener('keydown',e=>{if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+addEventListener('resize',fit);fit();go('login');
+</script>
+</body>
+</html>
